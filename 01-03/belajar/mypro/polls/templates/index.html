@@ -1,0 +1,29 @@
+<html>
+<head>
+    <title>Dokumen</title>
+</head>
+<body>
+    <div class= "form">
+        <form action="" method="POST">
+            {% csrf_token %} 
+            <!-- {{form}}  -->
+           
+            <label for="name">Isilah</label>
+            <input type="text"  name="nama">
+            <input type="text" name="asal" >
+            <button type="submit">Simpan </button>
+     
+        <!-- </form> -->
+    </div>
+    <table>
+        <div class="hasil">
+        <tr>
+            {% for z in isi %}
+            <td>{{z.nama}}</td>
+            <td>{{z.asal}}</td>
+       </tr>
+    </table>
+    </div>
+{% endfor %}
+</body>
+</html>
