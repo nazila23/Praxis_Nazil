@@ -1,29 +1,60 @@
 <html>
 <head>
     <title>Dokumen</title>
+    <style>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
+        table {
+          font-family: arial, sans-serif;
+          border-collapse: collapse;
+          width: 100%;
+        }
+        
+        td  {
+          border: 1px solid #dddddd;
+          text-align: left;
+          padding: 8px;
+        }
+       input [type= "button"]{
+       border :none;
+       }
+
+        </style>
 </head>
 <body>
+
     <div class= "form">
         <form action="" method="POST">
             {% csrf_token %} 
             <!-- {{form}}  -->
            
-            <label for="name">Isilah</label>
+            <label for="name"><h1>Isilah</h1></label>
             <input type="text"  name="nama">
-            <input type="text" name="asal" >
-            <button type="submit">Simpan </button>
-     
-        <!-- </form> -->
+            <button type="submit" >Simpan </button>
     </div>
+    <br>
     <table>
-        <div class="hasil">
+        <thead>
+            <tr>
+                <td><label for="name">NAMA</label></td>
+                <td><label for="name">AKSI</label></td>
+            </tr>
+
+        </thead>
         <tr>
+        <div class="hasil">
             {% for z in isi %}
-            <td>{{z.nama}}</td>
-            <td>{{z.asal}}</td>
-       </tr>
-    </table>
-    </div>
-{% endfor %}
+
+
+            <tr>
+                <td>{{z.nama}}</td>
+                <td> 
+                    <a type="submit" class="btn btn-success" href="{{z.id}}/delete">Delete</a>
+                    <a type="submit" class="btn btn-success" href="{{z.id}}/detail/">view</a>
+                    <a type="submit" class="btn btn-success" href="{{z.id}}/update/">Edit</a>
+                </td>
+            </tr>
+        </div>
+{% endfor %}                            
+</table>
 </body>
 </html>
