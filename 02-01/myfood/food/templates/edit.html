@@ -14,10 +14,10 @@
             <label for="name"><h1>CHILA'S FOOD</h4></label>
             <br>
             <label for="name"><h4>Pesan apa?</h4></label>
-            <input type="text" class="form-control" name="nama" value="{{isi.name}}" class = "form-control">
-            <input type="text" class="form-control" name="jenis"value="{{isi.name}}" class = "form-control">
-            <input type="number" class="form-control" name="harga"value="{{isi.name}}" class = "form-control">
-            <button type="submit" class="btn btn-primary" >Simpan </button>
+            <input type="text" class="form-control" name="nama" value="{{data.nama}}" class = "form-control">
+            <input type="text" class="form-control" name="jenis"value="{{data.jenis}}" class = "form-control">
+            <input type="number" class="form-control" name="harga"value="{{data.harga}}" class = "form-control">
+            <button type="submit" >Edit</button>
         </form>
     </div>
     <br>
@@ -29,20 +29,13 @@
             <th scope="col">Harga</th>
           </tr>
         </thead>
-        {% for z in isi %}
         <tbody>
           <tr>
-            <td>{{z.nama}}</td>
-            <td>{{z.jenis}}</td>
-            <td>{{z.harga}}</td>
-            <td> 
-                <a type="submit" class="btn btn-success" href="{{z.id}}/delete">Delete</a>
-                <a type="submit" class="btn btn-success" href="{{z.id}}/detail/">view</a>
-                <a type="submit" class="btn btn-success" href="{{z.id}}/update/">Edit</a>
-            </td>
+            <td>{{data.nama}}</td>
+            <td>{{data.jenis}}</td>
+            <td>{{data.harga}}</td>
           </tr>
         </tbody>
-        {% endfor %}                            
       </table>
 </body>
 </html> 

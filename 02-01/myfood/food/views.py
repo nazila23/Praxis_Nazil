@@ -1,3 +1,6 @@
+from django.core.checks import messages
+from django.http import request
+from django.http.response import Http404
 from django.shortcuts import redirect, render
 from.import models
 
@@ -24,6 +27,14 @@ def detail(request,id):
         'data': detail,
     })
 def update(request,id):
-    models.makanan.objects.filter(pk=id).update()
-    return render (request,'edit.html')
-    
+    if request.POST:
+        models.makanan.objects.filter(id=id).update(
+            nama= request.POST ['nama'],
+            jenis= request.POST ['jenis'],
+            harga= request.POST ['harga']
+            )
+    data = models.makanan.objects.filter(pk=id).first()
+    print(data)
+    return render (request,'edit.html',{
+        "data": data,
+    })
