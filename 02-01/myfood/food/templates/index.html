@@ -14,6 +14,7 @@
             <label for="name"><h1>CHILA'S FOOD</h4></label>
             <br>
             <a type="submit" class="btn btn-success" href="{% url 'home' %}">Home</a>
+            <h2><p style="text-align:center">Form Pesan Makanan</p></h2>
             <br>
             <label for="np">Nama Pengunjung</label>
             <input type="text" class="form-control" name="np">
@@ -30,7 +31,7 @@
             <br>
             <label for="makanan">Harga</label>
             <input type="number" class="form-control" name="harga">
-            <br>
+
             <button type="submit" >Simpan </button>
         </form>
     </div>
@@ -42,11 +43,13 @@
             <th scope="col">Nama Barang</th>
             <th scope="col">Jenis</th>
             <th scope="col">Harga</th>
+            <th scope="col">Jumlah</th>
           </tr>
         </thead>
         {% for z in isi %}
         <tbody>
           <tr>
+            <td>{{forloop.counter}}</td>
             <td>{{z.np}}</td>
             <td>{{z.nama}}</td>
             <td>{{z.jenis}}</td>
@@ -61,4 +64,4 @@
         {% endfor %}                            
       </table>
 </body>
-</ht
+</html>

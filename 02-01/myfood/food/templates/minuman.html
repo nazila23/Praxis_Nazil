@@ -14,6 +14,8 @@
             <label for="name"><h1>CHILA'S FOOD</h4></label>
             <br>
             <a type="submit" class="btn btn-success" href="{% url 'home' %}">Home</a>
+            <h2><p style="text-align:center">Form Pesan Minuman</p></h2>
+            <br>
             <br>
             <label for="np">Nama Pengunjung</label>
             <input type="text" class="form-control" name="np">
@@ -24,8 +26,8 @@
             <label for="jenis">Jenis</label>
             <select name="jenis" required id="jenis" value="selected" >
               <option value="selected" >---------</option>
-              <option value="Basah">Panas</option>
-              <option value="kering">Dingin</option>
+              <option value="Panas">Panas</option>
+              <option value="Kering">Dingin</option>
             </select>
             <br>
             <label for="makanan">Harga</label>
@@ -47,6 +49,7 @@
         {% for z in isi %}
         <tbody>
           <tr>
+            <td>{{forloop.counter}}</td>
             <td>{{z.np}}</td>
             <td>{{z.nama}}</td>
             <td>{{z.jenis}}</td>
