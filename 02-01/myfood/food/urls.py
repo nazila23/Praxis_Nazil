@@ -3,19 +3,19 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('index/', views.index, name='index'), 
     path('', views.home, name='home'), 
-    path('minuman/', views.minuman, name='minuman'), 
-    path('pesanan/', views.pesanan, name='pesanan'), 
+    path('index/', views.index, name='index'), 
     path('<id>/delete/', views.deleteindex),
     path('<id>/detail/', views.detailindex),
     path('<id>/update/', views.updateindex),
-    path('<id>/delete/', views.deleteminum),
-    path('<id>/detail/', views.detailminum),
-    path('<id>/update/', views.updateminum),
-    path('<id>/delete/', views.deletepesan),
-    path('<id>/detail/', views.detailpesan),
-    path('<id>/update/', views.updatepesan),
+    path('minuman/', views.minuman, name='minuman'), 
+    path('minuman/<id>/delete/', views.deleteminum),
+    path('minuman/<id>/detail/', views.detailminum),
+    path('minuman/<id>/update/', views.updateminum),
+    path('pesanan/', views.pesanan, name='pesanan'), 
+    path('pesanan<id>/delete/', views.deletepesanan),
+    path('pesanan<id>/detail/', views.detailpesanan),
+    path('pesanan<id>/update/', views.updatepesanan),
 
 
 ]

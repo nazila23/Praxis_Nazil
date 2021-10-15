@@ -1,5 +1,6 @@
 from django.db import models
-
+from django.db.models.base import Model
+from django.db.models.fields import CharField, IntegerField
 # Create your models here.
 class makanan(models.Model):
     np = models.TextField(max_length=200)
